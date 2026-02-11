@@ -95,6 +95,19 @@ const App = () => {
     },
   ]
 
+  const team = [
+    {
+      avatar: "src/assets/avatar.png",
+      name: "Alex Carter",
+      position: "Co-Founder & CEO"
+    },
+    {
+      avatar: "src/assets/avatar.png",
+      name: "Maria Gomez",
+      position: "Operations Manager"
+    }
+  ]
+
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -220,6 +233,23 @@ const App = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div id='about' className='py-28'>
+        <div className='text-center'>
+          <h1 className='poppins-bold text-4xl'>The People Behind Our Success</h1>
+          <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
+        </div>
+
+        <div className='grid grid-cols-3 gap-5 px-24 py-7'>
+          {team.map((member, index) => (
+            <div key={index} className='bg-white py-10 px-10'>
+              <img src={member.avatar} alt="Team Member" className='w-28 h-28 rounded-full mx-auto'/>
+              <h5 className='poppins-semibold py-2'>{member.name}</h5>
+              <p className='poppins-regular text-sm'>{member.position}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
