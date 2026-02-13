@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logos/orig-logo.png"
 
 const Header = () => {
   type Section = "services" | "portfolio" | "testimonials" | "about" | null;
@@ -13,9 +14,11 @@ const Header = () => {
   }`;
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur py-7 text-white flex justify-between px-24">
-      <div className="font-bold text-xl poppins-bold">
-        <a href="#hero" onClick={() => setActive(null)}>CodeWave</a>
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md py-3 text-white flex items-center justify-between px-24">
+      <div className="flex items-center shrink-0">
+        <a href="#hero" onClick={() => setActive(null)}>
+          <img src={logo} alt="CodeWave" className="h-12 w-50 object-cover" />
+        </a>
       </div>
 
       <div className="flex gap-10 items-center text-sm poppins-regular">
