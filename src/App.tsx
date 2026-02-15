@@ -241,7 +241,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id='about' className='py-30'>
+      <div id='about' className='py-38'>
         <div className='text-center'>
           <h1 className='poppins-bold text-4xl'>The People Behind Our Success</h1>
           <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>

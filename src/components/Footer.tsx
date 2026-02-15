@@ -2,12 +2,16 @@ import logo from "../assets/logos/orig-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-20 pb-8 px-24">
+    <footer className="bg-black text-white pt-12 pb-8 px-24">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
         {/* Logo + Description */}
         <div>
-          <img src={logo} alt="CodeWave Logo" className="h-10 w-auto mb-4" />
+          <img
+            src={logo}
+            alt="CodeWave Logo"
+            className="h-12 w-auto object-contain mb-4"
+          />
           <p className="text-sm text-gray-400 leading-relaxed">
             CodeWave is a digital agency focused on building powerful,
             high-performing websites and modern web applications.

@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md py-3 text-white flex items-center justify-between px-24">
       <div className="flex items-center shrink-0">
         <a href="#hero" onClick={() => setActive(null)}>
-          <img src={logo} alt="CodeWave" className="h-12 w-50 object-cover" />
+          <img src={logo} alt="CodeWave" className="h-12 w-50 object-contain" />
         </a>
       </div>
 
