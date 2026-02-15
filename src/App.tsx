@@ -4,7 +4,7 @@ import p1 from "./assets/Rectangle 4.png"
 import p2 from "./assets/Rectangle 5.png"
 import p3 from "./assets/Rectangle 6.png"
 import p4 from "./assets/Rectangle 7.png"
-
+import Footer from './components/Footer'
 
 const App = () => {
   const services = [
@@ -97,15 +97,20 @@ const App = () => {
 
   const team = [
     {
-      avatar: "src/assets/avatar.png",
+      avatar: "src/assets/team2.png",
       name: "Alex Carter",
       position: "Co-Founder & CEO"
     },
     {
-      avatar: "src/assets/avatar.png",
+      avatar: "src/assets/team1.png",
       name: "Maria Gomez",
-      position: "Operations Manager"
-    }
+      position: "Operations Director"
+    },
+    {
+      avatar: "src/assets/team3.png",
+      name: "James Lee",
+      position: "HR Director"
+    },
   ]
 
   const [current, setCurrent] = useState(0);
@@ -236,22 +241,24 @@ const App = () => {
         </div>
       </div>
 
-      <div id='about' className='py-28'>
+      <div id='about' className='py-30'>
         <div className='text-center'>
           <h1 className='poppins-bold text-4xl'>The People Behind Our Success</h1>
           <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
         </div>
 
-        <div className='grid grid-cols-3 gap-5 px-24 py-7'>
+        <div className='flex flex-wrap justify-center gap-10 px-24 py-7 text-center'>
           {team.map((member, index) => (
-            <div key={index} className='bg-white py-10 px-10'>
-              <img src={member.avatar} alt="Team Member" className='w-28 h-28 rounded-full mx-auto'/>
-              <h5 className='poppins-semibold py-2'>{member.name}</h5>
+            <div key={index} className='py-10'>
+              <img src={member.avatar} alt="Team Member" className='w-80 h-80 mx-auto'/>
+              <h5 className='poppins-semibold mt-5'>{member.name}</h5>
               <p className='poppins-regular text-sm'>{member.position}</p>
             </div>
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
