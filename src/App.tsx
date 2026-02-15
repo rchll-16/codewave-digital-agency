@@ -4,7 +4,7 @@ import p1 from "./assets/Rectangle 4.png"
 import p2 from "./assets/Rectangle 5.png"
 import p3 from "./assets/Rectangle 6.png"
 import p4 from "./assets/Rectangle 7.png"
-
+import Footer from './components/Footer'
 
 const App = () => {
   const services = [
@@ -257,6 +257,8 @@ const App = () => {
           ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
