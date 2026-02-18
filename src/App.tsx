@@ -153,7 +153,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id='services' className='bg-red-100 py-15'>
+      <div id='services' className='bg-red-100 py-18'>
         <div className='py-10 text-center'>
           <h1 className='poppins-bold text-4xl'>Ready to grow your business?</h1>
           <p className='poppins-light py-3 max-w-2xl mx-auto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero at beatae sunt est minus atque quae eaque maiores enim facere, excepturi dolorem.</p>
@@ -171,7 +171,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id='portfolio' className='py-28'>
+      <div id='portfolio' className='py-32'>
           <div className='text-center py-10'>
             <h1 className='poppins-bold text-4xl'>Portfolio</h1>
             <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
@@ -241,7 +241,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id='about' className='py-38'>
+      <div id='about' className='py-43'>
         <div className='text-center'>
           <h1 className='poppins-bold text-4xl'>The People Behind Our Success</h1>
           <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
