@@ -12,7 +12,7 @@ const Footer = () => {
             alt="CodeWave Logo"
             className="h-12 w-auto object-contain mb-4"
           />
-          <p className="text-sm text-gray-400 leading-relaxed">
+          <p className="text-sm text-gray-400 leading-relaxed poppins-regular">
             CodeWave is a digital agency focused on building powerful,
             high-performing websites and modern web applications.
           </p>
@@ -21,7 +21,7 @@ const Footer = () => {
         {/* Services */}
         <div>
           <h4 className="poppins-semibold mb-4 text-red-800">Services</h4>
-          <ul className="space-y-2 text-sm text-gray-400">
+          <ul className="space-y-2 text-sm text-gray-400 poppins-regular cursor-pointer">
             <li className="hover:text-white transition">Web Development</li>
             <li className="hover:text-white transition">UI/UX Design</li>
             <li className="hover:text-white transition">E-Commerce</li>
@@ -32,7 +32,7 @@ const Footer = () => {
         {/* Company */}
         <div>
           <h4 className="poppins-semibold mb-4 text-red-800">Company</h4>
-          <ul className="space-y-2 text-sm text-gray-400">
+          <ul className="space-y-2 text-sm text-gray-400 poppins-regular cursor-pointer">
             <li className="hover:text-white transition">About Us</li>
             <li className="hover:text-white transition">Portfolio</li>
             <li className="hover:text-white transition">Testimonials</li>
@@ -43,7 +43,7 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h4 className="poppins-semibold mb-4 text-red-800">Contact</h4>
-          <ul className="space-y-2 text-sm text-gray-400">
+          <ul className="space-y-2 text-sm text-gray-400 poppins-regular">
             <li>hello@codewave.com</li>
             <li>+63 912 345 6789</li>
             <li>Philippines</li>
@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-800 mt-16 pt-6 text-center text-sm text-gray-500">
+      <div className="border-t border-gray-800 mt-16 pt-6 text-center text-sm text-gray-500 poppins-regular">
         © {new Date().getFullYear()} CodeWave Digital Agency. All rights reserved.
       </div>
     </footer>
