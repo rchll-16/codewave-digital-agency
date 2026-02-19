@@ -1,4 +1,5 @@
 import logo from "../assets/logos/orig-logo.png";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -51,15 +52,26 @@ const Footer = () => {
 
           {/* Socials */}
           <div className="flex gap-4 mt-4">
-            <div className="w-8 h-8 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center text-xs cursor-pointer">
-              FB
-            </div>
-            <div className="w-8 h-8 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center text-xs cursor-pointer">
-              IG
-            </div>
-            <div className="w-8 h-8 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center text-xs cursor-pointer">
-              IN
-            </div>
+            <a
+              href="#"
+              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
+            >
+              <Facebook size={16} />
+            </a>
+
+            <a
+              href="#"
+              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
+            >
+              <Instagram size={16} />
+            </a>
+
+            <a
+              href="#"
+              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
+            >
+              <Linkedin size={16} />
+            </a>
           </div>
         </div>
       </div>
