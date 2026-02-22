@@ -6,79 +6,74 @@ interface ModalProps {
 }
 
 const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
   return (
-    <div
-      className={`fixed inset-0 z-50 flex justify-center items-center transition-all duration-300
-        ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
-      `}
-    >
-      {/* Backdrop */}
-      <div
-        onClick={onClose}
-        className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300
-          ${isOpen ? "opacity-100" : "opacity-0"}
-        `}
-      />
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-xl bg-black/40 transition-all duration-300">
 
-      {/* Modal */}
-      <div
-        className={`relative bg-white p-8 rounded-xl shadow-2xl w-full max-w-md
-          transform transition-all duration-300
-          ${isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"}
-        `}
-      >
-        <h2 className="text-2xl font-bold mb-6">Get a Quote</h2>
+      {/* Modal Container */}
+      <div className="relative w-full max-w-lg bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-10 transform transition-all duration-300 scale-100">
 
-        <form>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
+        {/* Header */}
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
+            Get a Quote
+          </h2>
+          <p className="text-sm text-gray-500 mt-2">
+            Tell us about your project and we will respond shortly.
+          </p>
+        </div>
+
+        {/* Form */}
+        <form className="space-y-6">
+
+          <div>
+            <label className="text-sm font-medium text-gray-700">Name</label>
             <input
               type="text"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-              focus:outline-none focus:ring-red-500 focus:border-red-500"
+              className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+              placeholder="Your full name"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
+          <div>
+            <label className="text-sm font-medium text-gray-700">Email</label>
             <input
               type="email"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-              focus:outline-none focus:ring-red-500 focus:border-red-500"
+              className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+              placeholder="you@example.com"
             />
           </div>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700">
-              Message
-            </label>
+          <div>
+            <label className="text-sm font-medium text-gray-700">Message</label>
             <textarea
               rows={4}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md
-              focus:outline-none focus:ring-red-500 focus:border-red-500"
+              className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition resize-none"
+              placeholder="Tell us about your project..."
             />
           </div>
 
-          <div className="flex justify-end gap-4">
+          {/* Buttons */}
+          <div className="flex justify-end gap-4 pt-4">
+
             <button
               type="button"
               onClick={onClose}
-              className="py-2 px-4 bg-gray-200 rounded-md hover:bg-gray-300 transition"
+              className="px-6 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 transition font-medium"
             >
               Cancel
             </button>
 
             <button
               type="submit"
-              className="py-2 px-4 bg-red-800 text-white rounded-md hover:bg-red-900 transition"
+              className="px-6 py-2.5 rounded-xl bg-red-800 hover:bg-red-900 text-white font-medium transition shadow-md hover:shadow-lg"
             >
-              Send
+              Send Message
             </button>
+
           </div>
+
         </form>
       </div>
     </div>
