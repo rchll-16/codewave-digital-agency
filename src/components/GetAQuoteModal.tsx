@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronDown, X } from "lucide-react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,106 +10,121 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xl px-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-2xl px-4 animate-fade-in">
 
-      <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+      {/* Modal Card */}
+      <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-white/20 animate-scale-in">
 
-        <div className="flex flex-col md:flex-row">
+        <div className="grid md:grid-cols-2">
 
-          {/* LEFT SIDE - Branding Section */}
-          <div className="md:w-1/2 bg-gradient-to-br from-red-800 to-red-900 text-white p-12 flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-4 leading-tight poppins-bold">
-              Let’s Build Something Powerful.
+          {/* 🔴 Left Branding Panel */}
+          <div className="bg-gradient-to-br from-red-800 via-red-900 to-black text-white p-14 flex flex-col justify-center relative">
+
+            <h2 className="text-4xl font-bold leading-tight mb-6 poppins-bold">
+              Build Your Next Digital Experience With CodeWave
             </h2>
+
             <p className="text-sm text-white/80 leading-relaxed poppins-regular">
-              At CodeWave, we craft high-performance websites and modern digital
-              experiences tailored to your business goals. Tell us about your
-              project and let’s turn your vision into reality.
+              We design and develop high-performance websites, scalable web systems,
+              and modern digital products that help your business grow in the digital era.
             </p>
 
-            <div className="mt-8 text-xs text-white/60 poppins-regular">
-              ⚡ Fast turnaround <br />
-              🎯 Strategy-driven design <br />
-              🚀 Scalable web solutions
+            <div className="mt-10 space-y-2 text-xs text-white/70 poppins-regular">
+              <div>⚡ Fast Development</div>
+              <div>🎯 Business Strategy Driven</div>
+              <div>🚀 Enterprise Ready Architecture</div>
             </div>
           </div>
 
-          {/* RIGHT SIDE - Form */}
-          <div className="md:w-1/2 p-10">
+          {/* ⚪ Right Form Panel */}
+          <div className="p-12 relative">
 
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-2xl text-gray-900 poppins-bold">
-                Get a Quote
-              </h3>
-              <button
-                onClick={onClose}
-                className="text-gray-400 hover:text-red-800 transition"
-              >
-                ✕
-              </button>
-            </div>
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-6 right-6 text-gray-400 hover:text-red-800 transition"
+            >
+              <X size={18}/>
+            </button>
 
-            <form className="space-y-5">
+            <h3 className="text-2xl font-bold mb-8 poppins-bold">
+              Project Inquiry
+            </h3>
 
-              <div className="poppins-regular">
-                <label className="text-sm text-gray-700 poppins-semibold">Full Name</label>
-                <input
-                  type="text"
-                  className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none transition"
-                  placeholder="Your full name"
-                />
-              </div>
+            <form className="space-y-7">
 
-              <div className="poppins-regular">
-                <label className="text-sm text-gray-700 poppins-semibold">Email</label>
-                <input
-                  type="email"
-                  className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none transition"
-                  placeholder="you@example.com"
-                />
-              </div>
+              {/* Floating Input */}
+              {["Full Name", "Email", "Company"].map((label, index) => (
+                <div key={index} className="relative group poppins-regular">
 
-              <div className="poppins-regular">
-                <label className="text-sm text-gray-700 poppins-semibold">Company</label>
-                <input
-                  type="text"
-                  className="mt-2 w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none transition"
-                  placeholder="Your company name"
-                />
-              </div>
+                  <input
+                    type={label === "Email" ? "email" : "text"}
+                    className="peer w-full border-b-2 border-gray-200 pt-5 pb-2 focus:border-red-800 outline-none transition bg-transparent"
+                    placeholder=" "
+                  />
 
-              <div>
-                <label className="text-sm text-gray-700 poppins-semibold">Budget Range</label>
-                <select
-                  className="mt-2 w-full px-4 py-3 poppins-regular border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none transition"
-                >
+                  <label className="absolute left-0 top-0 text-gray-400 text-sm transition-all
+                    peer-placeholder-shown:top-4
+                    peer-placeholder-shown:text-base
+                    peer-focus:top-0
+                    peer-focus:text-xs
+                    peer-focus:text-red-800
+                  ">
+                    {label}
+                  </label>
+                </div>
+              ))}
+
+              {/* Budget Select */}
+              <div className="relative group poppins-regular">
+
+                <select className="w-full border-b-2 border-gray-200 pt-5 pb-2 pr-10 appearance-none bg-transparent focus:border-red-800 outline-none transition cursor-pointer">
+
                   <option>$500 - $1,000</option>
                   <option>$1,000 - $3,000</option>
                   <option>$3,000 - $5,000</option>
                   <option>$5,000+</option>
+
                 </select>
+
+                <label className="absolute left-0 top-0 text-gray-400 text-sm">
+                  Budget Range
+                </label>
+
+                <ChevronDown size={16} className="absolute right-0 top-6 text-gray-400 pointer-events-none"/>
               </div>
 
-              <div>
-                <label className="text-sm font-medium text-gray-700 poppins-semibold">Project Details</label>
+              {/* Message */}
+              <div className="relative group poppins-regular">
+
                 <textarea
                   rows={3}
-                  className="mt-2 w-full px-4 py-3 poppins-regular border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:outline-none transition resize-none"
-                  placeholder="Tell us about your project..."
+                  className="peer w-full border-b-2 border-gray-200 pt-5 pb-2 focus:border-red-800 outline-none resize-none transition bg-transparent"
+                  placeholder=" "
                 />
+
+                <label className="absolute left-0 top-0 text-gray-400 text-sm transition-all
+                  peer-placeholder-shown:top-4
+                  peer-placeholder-shown:text-base
+                  peer-focus:top-0
+                  peer-focus:text-xs
+                  peer-focus:text-red-800
+                ">
+                  Project Details
+                </label>
               </div>
 
-              <div className="flex justify-end pt-4">
+              {/* Submit Button */}
+              <div className="pt-6 flex justify-end">
                 <button
                   type="submit"
-                  className="px-8 py-3 bg-red-800 hover:bg-red-900 text-white rounded-full poppins-semibold transition shadow-md hover:shadow-lg"
+                  className="relative px-8 py-3 bg-gradient-to-r from-red-800 to-red-900 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition transform"
                 >
-                  Submit
+                  Send Inquiry
                 </button>
               </div>
 
             </form>
-
           </div>
 
         </div>
