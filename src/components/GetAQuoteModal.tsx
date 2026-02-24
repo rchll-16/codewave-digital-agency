@@ -7,9 +7,10 @@ interface ModalProps {
 }
 
 const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-  const [shouldRender, setShouldRender] = useState<boolean>(isOpen);
+  const [shouldRender, setShouldRender] = useState(isOpen);
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
+  // Handle open/close animation
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
@@ -22,6 +23,25 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
+
+  // BODY SCROLL LOCK
+  useEffect(() => {
+    if (!shouldRender) return;
+
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+    };
+  }, [shouldRender]);
 
   if (!shouldRender) return null;
 
@@ -67,7 +87,7 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </button>
 
             <h3 className="text-2xl font-bold mb-8 poppins-bold">
-              Project Inquiry
+              Get A Quote
             </h3>
 
             <form className="space-y-7">
@@ -128,7 +148,7 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   type="submit"
                   className="px-8 py-3 bg-gradient-to-r from-red-800 to-red-900 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition"
                 >
-                  Send Inquiry
+                  Submit
                 </button>
               </div>
             </form>
