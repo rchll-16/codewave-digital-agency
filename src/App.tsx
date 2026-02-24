@@ -143,22 +143,44 @@ const App = () => {
 
   return (
     <div>
-      <div id="hero" className='bg-[url(src/assets/hero.png)] bg-cover min-h-screen bg-blend-multiply bg-neutral-400 pt-24'>
-        <Header />
+      <div id="hero" className="relative bg-[url(src/assets/hero.png)] bg-cover min-h-screen bg-blend-multiply bg-neutral-400 pt-24">
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+        <div className="relative z-20">
+          <Header />
+        </div>
 
-        <div className='flex-col py-45 px-24'>
-          <div className='text-white mb-10'>
-            <h4 className='poppins-bold'>Fast, secure, and creative digital solutions.</h4>
-            <h1 className='poppins-black text-6xl max-w-240 py-2.5'>Build Powerful & Creative Digital Solutions</h1>
-            <p className='poppins-light max-w-200'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam provident deleniti unde? Ullam, vero voluptate, architecto deserunt obcaecati dicta magnam repellendus vel blanditiis laudantium magni qui? Repellendus recusandae nobis id!</p>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+
+        <div className="relative z-20 flex-col py-45 px-24 text-white">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1 rounded-full border border-white/20 mb-6">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span className="text-sm poppins-regular text-white/80">
+              Trusted by growing brands worldwide
+            </span>
           </div>
-
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className='bg-red-800 py-2 px-8 text-white rounded-full border hover:bg-red-900 poppins-medium'
-          >
-            Get Started
-          </button>
+          <h1 className="poppins-black text-5xl md:text-7xl max-w-5xl leading-tight mb-6">
+            We Build <span className="text-red-500">High-Impact</span> Digital Products
+          </h1>
+          <p className="poppins-light text-white/70 text-lg mb-10 max-w-xl">
+            Strategy. Design. Development. We craft powerful digital systems
+            engineered for performance and growth.
+          </p>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-gradient-to-r from-red-700 to-red-900 rounded-full text-white poppins-semibold shadow-xl hover:scale-105 transition"
+            >
+              Start Your Project
+            </button>
+            <a
+              href="#portfolio"
+              className="px-8 py-4 border border-white/30 rounded-full text-white poppins-medium hover:bg-white/10 transition"
+            >
+              View Work
+            </a>
+          </div>
         </div>
       </div>
 
@@ -166,15 +188,24 @@ const App = () => {
         <div className='py-10 text-center'>
           <h1 className='poppins-bold text-4xl'>Ready to grow your business?</h1>
           <p className='poppins-light py-3 max-w-2xl mx-auto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero at beatae sunt est minus atque quae eaque maiores enim facere, excepturi dolorem.</p>
-          <button className='py-2 px-4 mt-4 bg-red-800 rounded-full text-white poppins-medium text-sm hover:bg-red-900'>Let's Connect</button>
+          <a href='#contact' className='py-2 px-4 mt-4 bg-red-800 rounded-full text-white poppins-medium text-sm hover:bg-red-900'>Let's Connect</a>
         </div>
 
-        <div className='grid grid-cols-3 gap-5 px-24 py-7'>
+        <div className="grid md:grid-cols-3 gap-8 px-6 md:px-24 py-12">
           {services.map((service, index) => (
-            <div key={index} className='bg-white py-10 px-10'>
-              {service.icon}
-              <h5 className='poppins-semibold py-2'>{service.title}</h5>
-              <p className='poppins-regular text-sm'>{service.desc}</p>
+            <div
+              key={index}
+              className="group bg-white p-10 rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <div className="mb-6">{service.icon}</div>
+
+              <h5 className="poppins-semibold text-lg mb-3 group-hover:text-red-600 transition">
+                {service.title}
+              </h5>
+
+              <p className="poppins-regular text-sm text-gray-600 leading-relaxed">
+                {service.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -186,11 +217,23 @@ const App = () => {
             <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
           </div>
 
-          <div className='flex justify-center gap-6 px-24'>
-            <img src={p1} alt="Portfolio Picture" className='w-80'/>
-            <img src={p2} alt="Portfolio Picture" className='w-80'/>
-            <img src={p3} alt="Portfolio Picture" className='w-80'/>
-            <img src={p4} alt="Portfolio Picture" className='w-80'/>
+          <div className="grid md:grid-cols-4 gap-6 px-6 md:px-24">
+            {[p1, p2, p3, p4].map((img, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden rounded-2xl group">
+                <img
+                  src={img}
+                  alt="Portfolio"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <button className="px-6 py-2 bg-red-700 rounded-full text-white text-sm poppins-medium">
+                    View Project
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className='flex justify-center py-10'>
@@ -218,9 +261,9 @@ const App = () => {
           </div>
         </div>
 
-        <div className="flex justify-center px-24 py-16 bg-red-100">
+        <div className="flex justify-center px-6 md:px-24 py-20 bg-gradient-to-br from-red-50 to-white">
           <div
-            className={`py-12 px-10 max-w-lg text-center transition-all duration-500
+            className={`relative bg-white p-12 rounded-3xl shadow-2xl max-w-xl text-center border border-gray-100 transition-all duration-500
               ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
             `}
           >
@@ -258,10 +301,22 @@ const App = () => {
 
         <div className='flex flex-wrap justify-center gap-10 px-24 py-7 text-center'>
           {team.map((member, index) => (
-            <div key={index} className='py-10'>
-              <img src={member.avatar} alt="Team Member" className='w-80 h-80 mx-auto'/>
-              <h5 className='poppins-semibold mt-5'>{member.name}</h5>
-              <p className='poppins-regular text-sm'>{member.position}</p>
+            <div key={index} className="group text-center">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src={member.avatar}
+                  alt="Team Member"
+                  className="w-72 h-72 object-cover mx-auto transition duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <h5 className="poppins-semibold mt-6 group-hover:text-red-600 transition">
+                {member.name}
+              </h5>
+
+              <p className="poppins-regular text-sm text-gray-500">
+                {member.position}
+              </p>
             </div>
           ))}
         </div>
