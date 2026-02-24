@@ -1,12 +1,12 @@
 import { useState } from "react";
 import logo from "../assets/logos/orig-logo.png"
-import GetAQuoteModal from "./GetAQuoteModal";
+// import GetAQuoteModal from "./GetAQuoteModal";
 
 const Header = () => {
-  type Section = "services" | "portfolio" | "testimonials" | "about" | null;
+  type Section = "services" | "portfolio" | "testimonials" | "about" | "contact" | null;
 
   const [active, setActive] = useState<Section>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const linkClass = (id: Section) =>
   `transition-colors duration-300 ${
@@ -41,15 +41,19 @@ const Header = () => {
             About
           </a>
 
-          <div
+          <a href="#contact" className={linkClass("contact")} onClick={() => setActive("contact")}>
+            Contact
+          </a>
+
+          {/* <div
             className="bg-red-800 py-2 px-6 rounded-full border hover:bg-red-900 poppins-medium cursor-pointer"
             onClick={() => setIsModalOpen(true)}
           >
             <button>Get A Quote</button>
-          </div>
+          </div> */}
         </div>
       </header>
-      <GetAQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {/* <GetAQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
     </>
   );
 };
