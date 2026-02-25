@@ -322,7 +322,7 @@ const App = () => {
         </div>
       </div>
 
-      <div id="contact" className="relative py-40 overflow-hidden bg-black text-white px-6">
+      <div id="contact" className="relative py-50 overflow-hidden bg-black text-white px-6">
 
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-red-900/30 via-black to-red-800/30" />

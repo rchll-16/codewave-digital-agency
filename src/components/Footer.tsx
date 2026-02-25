@@ -3,85 +3,107 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pt-12 pb-8 px-24">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="relative bg-black text-white overflow-hidden border-t border-white/10">
 
-        {/* Logo + Description */}
-        <div>
-          <img
-            src={logo}
-            alt="CodeWave Logo"
-            className="h-12 w-auto object-contain mb-4"
-          />
-          <p className="text-sm text-gray-400 leading-relaxed poppins-regular">
-            CodeWave is a digital agency focused on building powerful,
-            high-performing websites and modern web applications.
-          </p>
-        </div>
+      {/* Background Glow */}
+      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-red-800/20 blur-[150px]" />
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-red-600/20 blur-[150px]" />
 
-        {/* Services */}
-        <div>
-          <h4 className="poppins-semibold mb-4 text-red-800">Services</h4>
-          <ul className="space-y-2 text-sm text-gray-400 poppins-regular cursor-pointer">
-            <li className="hover:text-white transition">Web Development</li>
-            <li className="hover:text-white transition">UI/UX Design</li>
-            <li className="hover:text-white transition">E-Commerce</li>
-            <li className="hover:text-white transition">Brand Identity</li>
-          </ul>
-        </div>
+      <div className="relative max-w-7xl mx-auto px-8 lg:px-24 pt-20 pb-12">
 
-        {/* Company */}
-        <div>
-          <h4 className="poppins-semibold mb-4 text-red-800">Company</h4>
-          <ul className="space-y-2 text-sm text-gray-400 poppins-regular cursor-pointer">
-            <li className="hover:text-white transition">About Us</li>
-            <li className="hover:text-white transition">Portfolio</li>
-            <li className="hover:text-white transition">Testimonials</li>
-            <li className="hover:text-white transition">Contact</li>
-          </ul>
-        </div>
+        <div className="grid md:grid-cols-4 gap-14">
 
-        {/* Contact */}
-        <div>
-          <h4 className="poppins-semibold mb-4 text-red-800">Contact</h4>
-          <ul className="space-y-2 text-sm text-gray-400 poppins-regular">
-            <li>hello@codewave.com</li>
-            <li>+63 912 345 6789</li>
-            <li>Philippines</li>
-          </ul>
+          {/* Logo Section */}
+          <div className="space-y-5">
 
-          {/* Socials */}
-          <div className="flex gap-4 mt-4">
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
-            >
-              <Facebook size={16} />
-            </a>
+            <img
+              src={logo}
+              alt="CodeWave Logo"
+              className="h-14 w-auto object-contain hover:scale-105 transition-transform duration-300"
+            />
 
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
-            >
-              <Instagram size={16} />
-            </a>
+            <p className="text-sm text-white/60 leading-relaxed poppins-regular">
+              CodeWave is a digital agency focused on building powerful,
+              high-performing websites and modern web applications.
+            </p>
 
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-800 hover:bg-red-800 transition rounded-full flex items-center justify-center"
-            >
-              <Linkedin size={16} />
-            </a>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="poppins-semibold mb-6 text-red-500 tracking-wide">
+              Services
+            </h4>
+
+            <ul className="space-y-3 text-sm text-white/60 poppins-regular">
+              {["Web Development","UI/UX Design","E-Commerce","Brand Identity"].map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:text-white hover:translate-x-1 transition duration-300 cursor-pointer"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="poppins-semibold mb-6 text-red-500 tracking-wide">
+              Company
+            </h4>
+
+            <ul className="space-y-3 text-sm text-white/60 poppins-regular">
+              {["About Us","Portfolio","Testimonials","Contact"].map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:text-white hover:translate-x-1 transition duration-300 cursor-pointer"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-5">
+
+            <h4 className="poppins-semibold text-red-500 tracking-wide">
+              Contact
+            </h4>
+
+            <div className="text-sm text-white/60 space-y-2 poppins-regular">
+              <p>hello@codewave.com</p>
+              <p>+63 912 345 6789</p>
+              <p>Philippines</p>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex gap-4 pt-3">
+
+              {[Facebook, Instagram, Linkedin].map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center hover:bg-red-800 transition duration-300 hover:scale-110"
+                >
+                  <Icon size={16}/>
+                </a>
+              ))}
+
+            </div>
+
           </div>
         </div>
-      </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-800 mt-16 pt-6 text-center text-sm text-gray-500 poppins-regular">
-        © {new Date().getFullYear()} CodeWave Digital Agency. All rights reserved.
+        {/* Divider */}
+        <div className="border-t border-white/10 mt-16 pt-6 text-center text-sm text-white/40 poppins-regular">
+          © {new Date().getFullYear()} CodeWave Digital Agency. All rights reserved.
+        </div>
+
       </div>
     </footer>
   );
 };
 
-export default Footer
+export default Footer;
