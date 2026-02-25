@@ -1,62 +1,69 @@
 import { useState } from "react";
-import logo from "../assets/logos/orig-logo.png"
-// import GetAQuoteModal from "./GetAQuoteModal";
+import logo from "../assets/logos/orig-logo.png";
 
 const Header = () => {
-  type Section = "services" | "portfolio" | "testimonials" | "about" | "contact" | null;
+  type Section =
+    | "services"
+    | "portfolio"
+    | "testimonials"
+    | "about"
+    | "contact"
+    | null;
 
   const [active, setActive] = useState<Section>(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const linkClass = (id: Section) =>
-  `transition-colors duration-300 ${
-    active === id
-      ? "text-red-800 poppins-semibold"
-      : "hover:text-red-800"
-  }`;
+    `relative transition duration-300 ${
+      active === id
+        ? "text-red-500 poppins-semibold"
+        : "text-white/80 hover:text-white"
+    }`;
 
   return (
-    <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-md py-3 text-white flex items-center justify-between px-24">
-        <div className="flex items-center shrink-0">
-          <a href="#hero" onClick={() => setActive(null)}>
-            <img src={logo} alt="CodeWave" className="h-12 w-50 object-contain" />
-          </a>
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/60 border-b border-white/10">
+
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        {/* Logo */}
+        <a
+          href="#hero"
+          onClick={() => setActive(null)}
+          className="flex items-center group"
+        >
+          <img
+            src={logo}
+            alt="CodeWave"
+            className="h-12 object-contain transition duration-300 group-hover:scale-105"
+          />
+        </a>
+
+        {/* Navigation */}
+        <div className="hidden md:flex gap-10 items-center text-sm poppins-regular">
+
+          {["services", "portfolio", "testimonials", "about", "contact"].map(
+            (section) => (
+              <a
+                key={section}
+                href={`#${section}`}
+                onClick={() => setActive(section as Section)}
+                className={linkClass(section as Section)}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+
+                {/* Animated Underline */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-red-500 transition-all duration-300 ${
+                    active === section ? "w-full" : "w-0"
+                  }`}
+                />
+              </a>
+            )
+          )}
+
         </div>
-
-        <div className="flex gap-10 items-center text-sm poppins-regular">
-          <a href="#services" className={linkClass("services")} onClick={() => setActive("services")}>
-            Services
-          </a>
-
-          <a href="#portfolio" className={linkClass("portfolio")} onClick={() => setActive("portfolio")}>
-            Portfolio
-          </a>
-
-          <a href="#testimonials" className={linkClass("testimonials")} onClick={() => setActive("testimonials")}>
-            Testimonials
-          </a>
-
-          <a href="#about" className={linkClass("about")} onClick={() => setActive("about")}>
-            About
-          </a>
-
-          <a href="#contact" className={linkClass("contact")} onClick={() => setActive("contact")}>
-            Contact
-          </a>
-
-          {/* <div
-            className="bg-red-800 py-2 px-6 rounded-full border hover:bg-red-900 poppins-medium cursor-pointer"
-            onClick={() => setIsModalOpen(true)}
-          >
-            <button>Get A Quote</button>
-          </div> */}
-        </div>
-      </header>
-      {/* <GetAQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
-    </>
+      </div>
+    </header>
   );
 };
 
 export default Header;
-

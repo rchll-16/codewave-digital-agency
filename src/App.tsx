@@ -184,141 +184,295 @@ const App = () => {
         </div>
       </div>
 
-      <div id='services' className='bg-red-100 py-18'>
-        <div className='py-10 text-center'>
-          <h1 className='poppins-bold text-4xl'>Ready to grow your business?</h1>
-          <p className='poppins-light py-3 max-w-2xl mx-auto'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero at beatae sunt est minus atque quae eaque maiores enim facere, excepturi dolorem.</p>
-          <a href='#contact' className='py-2 px-4 mt-4 bg-red-800 rounded-full text-white poppins-medium text-sm hover:bg-red-900'>Let's Connect</a>
-        </div>
+      <div id="services" className="relative py-28 pt-40 bg-gradient-to-br from-red-50 via-white to-red-100 overflow-hidden">
 
-        <div className="grid md:grid-cols-3 gap-8 px-6 md:px-24 py-12">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white p-10 rounded-2xl shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        {/* Soft Background Glow */}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-400/20 blur-[140px]" />
+        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-red-600/20 blur-[140px]" />
+
+        <div className="relative max-w-7xl mx-auto px-6 md:px-24">
+
+          {/* CTA Header */}
+          <div className="text-center mb-20">
+
+            <h1 className="poppins-bold text-4xl md:text-5xl leading-tight mb-6">
+              Ready to <span className="text-red-600">Grow</span> Your Business?
+            </h1>
+
+            <p className="poppins-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              We design and develop digital experiences that elevate brands,
+              convert visitors, and accelerate business growth.
+            </p>
+
+            <a
+              href="#contact"
+              className="inline-block mt-8 px-8 py-3 bg-gradient-to-r from-red-700 to-red-900 rounded-full text-white poppins-medium text-sm shadow-xl hover:scale-105 transition duration-300"
             >
-              <div className="mb-6">{service.icon}</div>
-
-              <h5 className="poppins-semibold text-lg mb-3 group-hover:text-red-600 transition">
-                {service.title}
-              </h5>
-
-              <p className="poppins-regular text-sm text-gray-600 leading-relaxed">
-                {service.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div id='portfolio' className='py-32'>
-          <div className='text-center py-10'>
-            <h1 className='poppins-bold text-4xl'>Portfolio</h1>
-            <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
+              Let's Connect
+            </a>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 px-6 md:px-24">
-            {[p1, p2, p3, p4].map((img, index) => (
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-3 gap-10">
+
+            {services.map((service, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden rounded-2xl group">
-                <img
-                  src={img}
-                  alt="Portfolio"
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                  <button className="px-6 py-2 bg-red-700 rounded-full text-white text-sm poppins-medium">
-                    View Project
-                  </button>
+                className="group relative bg-white/80 backdrop-blur-md p-10 rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+              >
+                {/* Subtle Hover Glow */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-red-500/0 to-red-500/0 group-hover:from-red-100/40 group-hover:to-red-200/40 transition duration-500 -z-10" />
+
+                <div className="mb-6 text-red-600 group-hover:scale-110 transition duration-300">
+                  {service.icon}
+                </div>
+
+                <h5 className="poppins-semibold text-xl mb-4 group-hover:text-red-600 transition">
+                  {service.title}
+                </h5>
+
+                <p className="poppins-regular text-sm text-gray-600 leading-relaxed">
+                  {service.desc}
+                </p>
+
+                {/* Optional Learn More */}
+                <div className="mt-6 text-sm text-red-600 opacity-0 group-hover:opacity-100 transition duration-300 poppins-medium cursor-pointer">
+                  Learn More →
                 </div>
               </div>
             ))}
+
           </div>
 
-          <div className='flex justify-center py-10'>
-            <button className='py-2 px-4 mt-4 bg-red-800 rounded-full text-white poppins-medium text-sm hover:bg-red-900'>Explore More</button>
-          </div>
+        </div>
       </div>
 
-      <div id='testimonials' className='py-27'>
-        <div className='text-center py-7'>
-          <h1 className='poppins-bold text-4xl'>Our Clients</h1>
-          <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
-        </div>
+      <div
+        id="portfolio"
+        className="relative py-27 pt-35 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
+      >
 
-        {/* Logo Loop */}
-        <div className="overflow-hidden py-3 bg-transparent border">
-          <div className="flex gap-16 animate-marquee whitespace-nowrap">
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt="Client Logo"
-                className="h-12 w-auto"
-              />
-            ))}
-          </div>
-        </div>
+        {/* Background Glow */}
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-red-400/20 blur-[150px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-red-600/20 blur-[150px]" />
 
-        <div className="flex justify-center px-6 md:px-24 py-20 bg-gradient-to-br from-red-50 to-white">
-          <div
-            className={`relative bg-white p-12 rounded-3xl shadow-2xl max-w-xl text-center border border-gray-100 transition-all duration-500
-              ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
-            `}
-          >
-            <h4 className='poppins-semibold text-xl mb-4'>
-              "{testimonials[current].tagline}"
-            </h4>
+        <div className="relative max-w-7xl mx-auto px-6 md:px-24">
 
-            <p className='poppins-regular text-md text-gray-600 mb-8'>
-              {testimonials[current].desc}
+          {/* Section Header */}
+          <div className="text-center mb-20">
+
+            <h1 className="poppins-bold text-4xl md:text-5xl mb-6">
+              Featured <span className="text-red-600">Projects</span>
+            </h1>
+
+            <p className="poppins-light text-gray-600 max-w-xl mx-auto leading-relaxed">
+              We build digital experiences that merge performance,
+              design, and innovation into powerful products.
             </p>
 
-            <img 
-              src={testimonials[current].avatar} 
-              alt="Client Avatar"  
-              className='w-18 h-18 rounded-full mx-auto mb-4'
-            />
-
-            <div>
-              <h5 className='poppins-semibold'>
-                {testimonials[current].name}
-              </h5>
-              <p className='poppins-light text-xs text-gray-500'>
-                {testimonials[current].position}
-              </p>
-            </div>
           </div>
+
+          {/* Portfolio Grid */}
+          <div className="grid md:grid-cols-4 gap-8">
+
+            {[p1, p2, p3, p4].map((img, index) => (
+              <div
+                key={index}
+                className="relative group overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                {/* Image */}
+                <img
+                  src={img}
+                  alt="Portfolio"
+                  className="w-full h-[320px] object-cover transition duration-700 group-hover:scale-110"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                {/* Content */}
+                <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition duration-500">
+                  <h3 className="text-white text-lg poppins-semibold mb-2">
+                    Project Title
+                  </h3>
+                  <p className="text-white/70 text-sm poppins-regular mb-4">
+                    Web Development • UI/UX
+                  </p>
+
+                  <button className="px-5 py-2 bg-red-700 rounded-full text-white text-xs poppins-medium hover:bg-red-800 transition cursor-pointer">
+                    View Case Study →
+                  </button>
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="flex justify-center mt-20">
+            <button className="px-10 py-4 bg-gradient-to-r from-red-700 to-red-900 rounded-full text-white poppins-medium shadow-xl hover:scale-105 transition duration-300">
+              Explore More Projects
+            </button>
+          </div>
+
         </div>
       </div>
 
-      <div id='about' className='py-43'>
-        <div className='text-center'>
-          <h1 className='poppins-bold text-4xl'>The People Behind Our Success</h1>
-          <p className='poppins-light py-3 max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam et dolore provident aliquam quidem quae.</p>
-        </div>
+      <div
+        id="testimonials"
+        className="relative py-24 pt-33 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
+      >
 
-        <div className='flex flex-wrap justify-center gap-10 px-24 py-7 text-center'>
-          {team.map((member, index) => (
-            <div key={index} className="group text-center">
-              <div className="relative overflow-hidden rounded-2xl">
+        {/* Background Glow */}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-red-400/20 blur-[150px]" />
+        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-red-600/20 blur-[150px]" />
+
+        <div className="relative max-w-6xl mx-auto px-6 md:px-24">
+
+          {/* Section Header */}
+          <div className="text-center mb-10">
+
+            <h1 className="poppins-bold text-4xl md:text-5xl mb-6">
+              What Our <span className="text-red-600">Clients Say</span>
+            </h1>
+
+            <p className="poppins-light text-gray-600 max-w-xl mx-auto leading-relaxed">
+              We partner with brands to create high-performing digital products
+              that drive measurable growth.
+            </p>
+          </div>
+
+          {/* Logo Marquee */}
+          <div className="overflow-hidden mb-10 w-100%">
+            <div className="flex gap-20 animate-marquee whitespace-nowrap opacity-70">
+              {[...clientLogos, ...clientLogos].map((logo, index) => (
                 <img
-                  src={member.avatar}
-                  alt="Team Member"
-                  className="w-72 h-72 object-cover mx-auto transition duration-500 group-hover:scale-105"
+                  key={index}
+                  src={logo}
+                  alt="Client Logo"
+                  className="h-12 w-auto grayscale hover:grayscale-0 transition duration-300"
                 />
+              ))}
+            </div>
+          </div>
+
+          {/* Testimonial Card */}
+          <div className="flex justify-center">
+
+            <div
+              className={`relative bg-white p-14 rounded-3xl shadow-2xl max-w-2xl text-center border border-gray-100 transition-all duration-700
+              ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+              `}
+            >
+
+              {/* Decorative Quote */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-red-100 select-none">
+                “
               </div>
 
-              <h5 className="poppins-semibold mt-6 group-hover:text-red-600 transition">
-                {member.name}
-              </h5>
+              {/* Tagline */}
+              <h4 className="poppins-semibold text-2xl mb-6 leading-snug">
+                {testimonials[current].tagline}
+              </h4>
 
-              <p className="poppins-regular text-sm text-gray-500">
-                {member.position}
+              {/* Description */}
+              <p className="poppins-regular text-gray-600 mb-10 leading-relaxed">
+                {testimonials[current].desc}
               </p>
+
+              {/* Avatar */}
+              <div className="flex flex-col items-center">
+
+                <div className="relative mb-5">
+                  <div className="absolute inset-0 rounded-full bg-red-400/20 blur-xl"></div>
+                  <img
+                    src={testimonials[current].avatar}
+                    alt="Client Avatar"
+                    className="relative w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
+                  />
+                </div>
+
+                {/* Name + Position */}
+                <h5 className="poppins-semibold text-lg">
+                  {testimonials[current].name}
+                </h5>
+
+                <p className="poppins-light text-sm text-gray-500">
+                  {testimonials[current].position}
+                </p>
+
+              </div>
+
             </div>
-          ))}
+          </div>
+
+        </div>
+      </div>
+
+      <div
+        id="about"
+        className="relative py-38 pt-50 bg-gradient-to-b from-white via-red-50/30 to-white overflow-hidden"
+      >
+
+        {/* Background Glow */}
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-red-400/20 blur-[150px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-red-600/20 blur-[150px]" />
+
+        <div className="relative max-w-7xl mx-auto px-6 md:px-24">
+
+          {/* Section Header */}
+          <div className="text-center mb-20">
+
+            <h1 className="poppins-bold text-4xl md:text-5xl mb-6">
+              The People Behind Our <span className="text-red-600">Success</span>
+            </h1>
+
+            <p className="poppins-light text-gray-600 max-w-xl mx-auto leading-relaxed">
+              A passionate team of designers, developers, and strategists
+              dedicated to building impactful digital experiences.
+            </p>
+
+          </div>
+
+          {/* Team Grid */}
+          <div className="grid md:grid-cols-3 gap-12">
+
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="group bg-white/80 backdrop-blur-md p-8 rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 text-center"
+              >
+
+                {/* Avatar */}
+                <div className="relative mb-6 flex justify-center">
+                  <div className="absolute w-40 h-40 bg-red-400/20 rounded-full blur-2xl"></div>
+
+                  <img
+                    src={member.avatar}
+                    alt="Team Member"
+                    className="relative w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Name */}
+                <h5 className="poppins-semibold text-lg group-hover:text-red-600 transition">
+                  {member.name}
+                </h5>
+
+                {/* Position */}
+                <p className="poppins-regular text-sm text-gray-500 mt-2">
+                  {member.position}
+                </p>
+
+                {/* Optional subtle divider */}
+                <div className="w-10 h-1 bg-red-500 mx-auto mt-4 rounded-full opacity-60 group-hover:w-16 transition-all duration-300"></div>
+
+              </div>
+            ))}
+
+          </div>
+
         </div>
       </div>
 
