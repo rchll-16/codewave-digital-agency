@@ -28,8 +28,7 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (!shouldRender) return;
 
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
     const originalOverflow = document.body.style.overflow;
     const originalPaddingRight = document.body.style.paddingRight;
@@ -57,16 +56,15 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         }`}
       >
         <div className="grid md:grid-cols-2">
-
           {/* LEFT PANEL */}
-          <div className="bg-gradient-to-br from-red-800 via-red-900 to-black text-white p-14 flex flex-col justify-center">
+          <div className="bg-linear-to-br from-red-800 via-red-900 to-black text-white p-14 flex flex-col justify-center">
             <h2 className="text-4xl font-bold leading-tight mb-6 poppins-bold">
               Build Your Next Digital Experience With CodeWave
             </h2>
 
             <p className="text-sm text-white/80 leading-relaxed poppins-regular">
-              We design and develop high-performance websites, scalable web systems,
-              and modern digital products that help your business grow.
+              We design and develop high-performance websites, scalable web systems, and modern
+              digital products that help your business grow.
             </p>
 
             <div className="mt-10 space-y-2 text-xs text-white/70 poppins-regular">
@@ -78,7 +76,6 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
           {/* RIGHT PANEL */}
           <div className="p-12 relative">
-
             <button
               onClick={onClose}
               className="absolute top-6 right-6 text-gray-400 hover:text-red-800 transition"
@@ -86,9 +83,7 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <X size={18} />
             </button>
 
-            <h3 className="text-2xl font-bold mb-8 poppins-bold">
-              Get A Quote
-            </h3>
+            <h3 className="text-2xl font-bold mb-8 poppins-bold">Get A Quote</h3>
 
             <form className="space-y-7">
               {["Full Name", "Email", "Company"].map((label, index) => (
@@ -98,12 +93,14 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     className="peer w-full border-b-2 border-gray-200 pt-5 pb-2 focus:border-red-800 outline-none transition bg-transparent"
                     placeholder=" "
                   />
-                  <label className="absolute left-0 top-0 text-gray-400 text-sm transition-all
+                  <label
+                    className="absolute left-0 top-0 text-gray-400 text-sm transition-all
                     peer-placeholder-shown:top-4
                     peer-placeholder-shown:text-base
                     peer-focus:top-0
                     peer-focus:text-xs
-                    peer-focus:text-red-800">
+                    peer-focus:text-red-800"
+                  >
                     {label}
                   </label>
                 </div>
@@ -117,9 +114,7 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   <option>$5,000+</option>
                 </select>
 
-                <label className="absolute left-0 top-0 text-gray-400 text-sm">
-                  Budget Range
-                </label>
+                <label className="absolute left-0 top-0 text-gray-400 text-sm">Budget Range</label>
 
                 <ChevronDown
                   size={16}
@@ -133,12 +128,14 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   className="peer w-full border-b-2 border-gray-200 pt-5 pb-2 focus:border-red-800 outline-none resize-none transition bg-transparent"
                   placeholder=" "
                 />
-                <label className="absolute left-0 top-0 text-gray-400 text-sm transition-all
+                <label
+                  className="absolute left-0 top-0 text-gray-400 text-sm transition-all
                   peer-placeholder-shown:top-4
                   peer-placeholder-shown:text-base
                   peer-focus:top-0
                   peer-focus:text-xs
-                  peer-focus:text-red-800">
+                  peer-focus:text-red-800"
+                >
                   Project Details
                 </label>
               </div>
@@ -146,13 +143,12 @@ const GetAQuoteModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               <div className="pt-6 flex justify-end">
                 <button
                   type="submit"
-                  className="px-8 py-3 bg-gradient-to-r from-red-800 to-red-900 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition"
+                  className="px-8 py-3 bg-linear-to-r from-red-800 to-red-900 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition"
                 >
                   Submit
                 </button>
               </div>
             </form>
-
           </div>
         </div>
       </div>
