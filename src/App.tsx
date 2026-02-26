@@ -148,7 +148,6 @@ const App = () => {
         <div className="relative z-20">
           <Header />
         </div>
-
         
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
@@ -168,14 +167,12 @@ const App = () => {
             engineered for performance and growth.
           </p>
           <div className="flex gap-4">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <button onClick={() => setIsModalOpen(true)}
               className="px-8 py-4 bg-gradient-to-r from-red-700 to-red-900 rounded-full text-white poppins-semibold shadow-xl hover:scale-105 transition"
             >
               Start Your Project
             </button>
-            <a
-              href="#portfolio"
+            <a href="#portfolio"
               className="px-8 py-4 border border-white/30 rounded-full text-white poppins-medium hover:bg-white/10 transition"
             >
               View Work
@@ -204,8 +201,7 @@ const App = () => {
               convert visitors, and accelerate business growth.
             </p>
 
-            <a
-              href="#contact"
+            <a href="#contact"
               className="inline-block mt-8 px-8 py-3 bg-gradient-to-r from-red-700 to-red-900 rounded-full text-white poppins-medium text-sm shadow-xl hover:scale-105 transition duration-300"
             >
               Let's Connect
@@ -214,10 +210,8 @@ const App = () => {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-10">
-
             {services.map((service, index) => (
-              <div
-                key={index}
+              <div key={index}
                 className="group relative bg-white/80 backdrop-blur-md p-10 rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
               >
                 {/* Subtle Hover Glow */}
@@ -235,20 +229,16 @@ const App = () => {
                   {service.desc}
                 </p>
 
-                {/* Optional Learn More */}
                 <div className="mt-6 text-sm text-red-600 opacity-0 group-hover:opacity-100 transition duration-300 poppins-medium cursor-pointer">
                   Learn More →
                 </div>
               </div>
             ))}
-
           </div>
-
         </div>
       </div>
 
-      <div
-        id="portfolio"
+      <div id="portfolio"
         className="relative py-27 pt-35 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
       >
 
@@ -274,7 +264,6 @@ const App = () => {
 
           {/* Portfolio Grid */}
           <div className="grid md:grid-cols-4 gap-8">
-
             {[p1, p2, p3, p4].map((img, index) => (
               <div
                 key={index}
@@ -303,10 +292,8 @@ const App = () => {
                     View Case Study →
                   </button>
                 </div>
-
               </div>
             ))}
-
           </div>
 
           {/* Bottom CTA */}
@@ -319,8 +306,7 @@ const App = () => {
         </div>
       </div>
 
-      <div
-        id="testimonials"
+      <div id="testimonials"
         className="relative py-24 pt-33 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
       >
 
@@ -359,7 +345,6 @@ const App = () => {
 
           {/* Testimonial Card */}
           <div className="flex justify-center">
-
             <div
               className={`relative bg-white p-14 rounded-3xl shadow-2xl max-w-2xl text-center border border-gray-100 transition-all duration-700
               ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
@@ -383,7 +368,6 @@ const App = () => {
 
               {/* Avatar */}
               <div className="flex flex-col items-center">
-
                 <div className="relative mb-5">
                   <div className="absolute inset-0 rounded-full bg-red-400/20 blur-xl"></div>
                   <img
@@ -397,7 +381,6 @@ const App = () => {
                 <h5 className="poppins-semibold text-lg">
                   {testimonials[current].name}
                 </h5>
-
                 <p className="poppins-light text-sm text-gray-500">
                   {testimonials[current].position}
                 </p>
@@ -410,8 +393,7 @@ const App = () => {
         </div>
       </div>
 
-      <div
-        id="about"
+      <div id="about"
         className="relative py-38 pt-50 bg-gradient-to-b from-white via-red-50/30 to-white overflow-hidden"
       >
 
@@ -423,16 +405,13 @@ const App = () => {
 
           {/* Section Header */}
           <div className="text-center mb-20">
-
             <h1 className="poppins-bold text-4xl md:text-5xl mb-6">
               The People Behind Our <span className="text-red-600">Success</span>
             </h1>
-
             <p className="poppins-light text-gray-600 max-w-xl mx-auto leading-relaxed">
               A passionate team of designers, developers, and strategists
               dedicated to building impactful digital experiences.
             </p>
-
           </div>
 
           {/* Team Grid */}
@@ -516,8 +495,7 @@ const App = () => {
                 </p>
               </div>
 
-              <button
-                onClick={() => setIsModalOpen(true)}
+              <button onClick={() => setIsModalOpen(true)}
                 className="relative px-10 py-4 bg-gradient-to-r from-red-700 to-red-900 rounded-full poppins-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-red-900/50"
               >
                 Start Your Project
@@ -533,10 +511,7 @@ const App = () => {
         </div>
       </div>
       
-      <GetAQuoteModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      <GetAQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Footer />
     </div>
   )
