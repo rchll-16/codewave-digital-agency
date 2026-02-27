@@ -8,7 +8,7 @@ const Portfolio = () => {
       <div>
         <section
           id="portfolio"
-          className="relative py-27 pt-35 bg-linear-to-b from-white via-red-50/40 to-white overflow-hidden"
+          className="relative py-17 bg-linear-to-b from-white via-red-50/40 to-white overflow-hidden"
         >
           {/* Background Glow */}
           <div className="absolute -top-40 -right-40 w-125 h-125 bg-red-400/20 blur-[150px]" />
