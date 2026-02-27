@@ -98,7 +98,7 @@ const Services = () => {
     <div>
       <section
         id="services"
-        className="relative py-28 pt-40 bg-linear-to-br from-red-50 via-white to-red-100 overflow-hidden"
+        className="relative py-20 bg-linear-to-br from-red-50 via-white to-red-100 overflow-hidden"
       >
         {/* Soft Background Glow */}
         <div className="absolute -top-40 -left-40 w-125 h-125 bg-red-400/20 blur-[140px]" />

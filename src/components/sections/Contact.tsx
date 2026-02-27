@@ -4,7 +4,7 @@ const Contact = ({ onOpenModal }: { onOpenModal: () => void }) => {
 
   return (
     <div>
-      <section id="contact" className="relative py-50 overflow-hidden bg-black text-white px-6">
+      <section id="contact" className="relative py-40 overflow-hidden bg-black text-white px-6">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-linear-to-br from-red-900/30 via-black to-red-800/30" />
         <div className="absolute -top-40 -left-40 w-125 h-125 bg-red-800/20 blur-[150px] rounded-full" />

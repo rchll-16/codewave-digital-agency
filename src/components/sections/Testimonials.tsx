@@ -52,7 +52,7 @@ const Testimonials = () => {
     <div>
       <section
         id="testimonials"
-        className="relative py-24 pt-33 bg-linear-to-b from-white via-red-50/40 to-white overflow-hidden"
+        className="relative py-14 bg-linear-to-b from-white via-red-50/40 to-white overflow-hidden"
       >
         {/* Background Glow */}
         <div className="absolute -top-40 -left-40 w-125 h-125 bg-red-400/20 blur-[150px]" />

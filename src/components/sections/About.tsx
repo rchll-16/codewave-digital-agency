@@ -23,7 +23,7 @@ const About = () => {
     <div>
       <section
         id="about"
-        className="relative py-38 pt-50 bg-linear-to-b from-white via-red-50/30 to-white overflow-hidden"
+        className="relative py-34 bg-linear-to-b from-white via-red-50/30 to-white overflow-hidden"
       >
         {/* Background Glow */}
         <div className="absolute -top-40 -right-40 w-125 h-125 bg-red-400/20 blur-[150px]" />
