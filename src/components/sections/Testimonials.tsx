@@ -125,7 +125,9 @@ const Testimonials = () => {
                 </div>
 
                 {/* Name + Position */}
-                <h5 className="poppins-semibold text-base sm:text-lg">{testimonials[current].name}</h5>
+                <h5 className="poppins-semibold text-base sm:text-lg">
+                  {testimonials[current].name}
+                </h5>
                 <p className="poppins-light text-xs sm:text-sm text-gray-500">
                   {testimonials[current].position}
                 </p>
@@ -136,6 +138,6 @@ const Testimonials = () => {
       </section>
     </div>
   );
-}
+};
 
-export default Testimonials
+export default Testimonials;

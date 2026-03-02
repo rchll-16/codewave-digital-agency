@@ -1,7 +1,4 @@
-
-
 const Contact = ({ onOpenModal }: { onOpenModal: () => void }) => {
-
   return (
     <div>
       <section id="contact" className="relative py-40 overflow-hidden bg-black text-white px-6">
@@ -58,6 +55,6 @@ const Contact = ({ onOpenModal }: { onOpenModal: () => void }) => {
       </section>
     </div>
   );
-}
+};
 
-export default Contact
+export default Contact;
