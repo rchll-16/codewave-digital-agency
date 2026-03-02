@@ -98,7 +98,7 @@ const Services = () => {
     <div>
       <section
         id="services"
-        className="relative py-16 sm:py-20 md:py-28 
+        className="relative py-16 md:py-20 
              bg-gradient-to-br from-red-50 via-white to-red-100 
              overflow-hidden"
       >

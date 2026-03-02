@@ -8,7 +8,7 @@ const Portfolio = () => {
       <div>
         <section
           id="portfolio"
-          className="relative py-16 sm:py-20 md:py-28 
+          className="relative py-16 md:py-20
              bg-gradient-to-b from-white via-red-50/40 to-white 
              overflow-hidden"
         >
