@@ -98,57 +98,37 @@ const Services = () => {
     <div>
       <section
         id="services"
-        className="relative py-16 md:py-20 
-             bg-gradient-to-br from-red-50 via-white to-red-100 
+        className="relative py-16 md:py-20 bg-gradient-to-br from-red-50 via-white to-red-100 
              overflow-hidden"
       >
         {/* Soft Background Glow */}
         <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px]" />
         <div className="absolute -bottom-40 -right-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-600/20 blur-[120px]" />
 
-        <div
-          className="relative max-w-7xl mx-auto 
-                  px-6 sm:px-10 md:px-16 lg:px-24"
-        >
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
+
           {/* CTA Header */}
           <div className="text-center mb-14 sm:mb-20">
-            <h1
-              className="poppins-bold 
-                     text-3xl sm:text-4xl md:text-5xl 
-                     leading-tight mb-6"
-            >
+            <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
               Ready to <span className="text-red-600">Grow</span> Your Business?
             </h1>
 
-            <p
-              className="poppins-light text-gray-600 
-                    text-sm sm:text-base 
-                    max-w-2xl mx-auto leading-relaxed"
-            >
+            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
               We design and develop digital experiences that elevate brands, convert visitors, and
               accelerate business growth.
             </p>
 
             <a
               href="#contact"
-              className="inline-block mt-8 
-                   px-6 sm:px-8 py-3 
-                   bg-gradient-to-r from-red-700 to-red-900 
-                   rounded-full text-white poppins-medium text-sm 
-                   shadow-xl hover:scale-105 transition duration-300"
+              className="inline-block mt-8 px-6 sm:px-8 py-3 bg-gradient-to-r from-red-700 to-red-900 
+                   rounded-full text-white poppins-medium text-sm shadow-xl hover:scale-105 transition duration-300"
             >
               Let's Connect
             </a>
           </div>
 
           {/* Services Grid */}
-          <div
-            className="grid 
-                    grid-cols-1 
-                    sm:grid-cols-2 
-                    lg:grid-cols-3 
-                    gap-6 sm:gap-8 md:gap-10"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {services.map((service, index) => (
               <div
                 key={index}

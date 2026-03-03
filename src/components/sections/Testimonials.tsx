@@ -52,9 +52,7 @@ const Testimonials = () => {
     <div>
       <section
         id="testimonials"
-        className="relative py-16 md:py-13
-             bg-gradient-to-b from-white via-red-50/40 to-white 
-             overflow-hidden"
+        className="relative py-16 md:py-13 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
       >
         {/* Background Glow */}
         <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px]" />
@@ -67,11 +65,7 @@ const Testimonials = () => {
               What Our <span className="text-red-600">Clients Say</span>
             </h1>
 
-            <p
-              className="poppins-light text-gray-600 
-                    text-sm sm:text-base 
-                    max-w-xl mx-auto leading-relaxed"
-            >
+            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
               We partner with brands to create high-performing digital products that drive
               measurable growth.
             </p>
