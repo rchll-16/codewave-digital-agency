@@ -20,7 +20,7 @@ const Hero = ({ onOpenModal }: { onOpenModal: () => void }) => {
         
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md 
-                     px-4 py-1 rounded-full border border-white/20 mb-6 w-fitanimate-fade-up"
+                     px-4 py-1 rounded-full border border-white/20 mb-6 w-fit animate-fade-up"
         >
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
           <span className="text-xs sm:text-sm poppins-regular text-white/80">
