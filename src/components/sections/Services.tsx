@@ -102,18 +102,18 @@ const Services = () => {
              overflow-hidden"
       >
         {/* Soft Background Glow */}
-        <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px]" />
-        <div className="absolute -bottom-40 -right-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-600/20 blur-[120px]" />
+        <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px] animate-hero-bg"/>
+        <div className="absolute -bottom-40 -right-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-600/20 blur-[120px] animate-hero-bg" />
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
 
           {/* CTA Header */}
-          <div className="text-center mb-14 sm:mb-20">
-            <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          <div className="text-center mb-14 sm:mb-20 animate-fade-up">
+            <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6 animate-fade-up">
               Ready to <span className="text-red-600">Grow</span> Your Business?
             </h1>
 
-            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed animate-fade-up [animation-delay:0.15s]">
               We design and develop digital experiences that elevate brands, convert visitors, and
               accelerate business growth.
             </p>
@@ -121,7 +121,8 @@ const Services = () => {
             <a
               href="#contact"
               className="inline-block mt-8 px-6 sm:px-8 py-3 bg-gradient-to-r from-red-700 to-red-900 
-                   rounded-full text-white poppins-medium text-sm shadow-xl hover:scale-105 transition duration-300"
+                   rounded-full text-white poppins-medium text-sm shadow-xl hover:scale-105 transition duration-300
+                   animate-scale [animation-delay:0.3s]"
             >
               Let's Connect
             </a>
@@ -132,12 +133,13 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white/80 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
+                style={{ animationDelay: `${index * 0.15}s `}}
+                className="group relative bg-white/80 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-fade-up"
               >
                 {/* Subtle Hover Glow */}
                 <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-red-500/0 to-red-500/0 group-hover:from-red-100/40 group-hover:to-red-200/40 transition duration-500 -z-10" />
 
-                <div className="mb-6 text-red-600 group-hover:scale-110 transition duration-300">
+                <div className="mb-6 text-red-600 group-hover:scale-110 transition duration-300 animate-scale">
                   {service.icon}
                 </div>
 
@@ -149,7 +151,7 @@ const Services = () => {
                   {service.desc}
                 </p>
 
-                <div className="mt-6 text-sm text-red-600 opacity-0 group-hover:opacity-100 transition duration-300 poppins-medium cursor-pointer">
+                <div className="mt-6 text-sm text-red-600 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 poppins-medium cursor-pointer">
                   Learn More →
                 </div>
               </div>
