@@ -55,24 +55,24 @@ const Testimonials = () => {
         className="relative py-16 md:py-13 bg-gradient-to-b from-white via-red-50/40 to-white overflow-hidden"
       >
         {/* Background Glow */}
-        <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px]" />
-        <div className="absolute -bottom-40 -right-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-600/20 blur-[120px]" />
+        <div className="absolute -top-40 -left-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-400/20 blur-[120px] animate-hero-bg" />
+        <div className="absolute -bottom-40 -right-40 w-72 sm:w-96 h-72 sm:h-96 bg-red-600/20 blur-[120px] animate-hero-bg" />
 
         <div className="relative max-w-6xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
           {/* Section Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl mb-6">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-up">
+            <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl mb-6 animate-fade-up">
               What Our <span className="text-red-600">Clients Say</span>
             </h1>
 
-            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="poppins-light text-gray-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed animate-fade-up [animation-delay:0.15s]">
               We partner with brands to create high-performing digital products that drive
               measurable growth.
             </p>
           </div>
 
           {/* Logo Marquee */}
-          <div className="overflow-hidden mb-12 w-full">
+          <div className="overflow-hidden mb-12 w-full animate-fade-up [animation-delay:0.25s]">
             <div className="flex gap-10 sm:gap-16 md:gap-20 animate-marquee whitespace-nowrap opacity-70">
               {[...clientLogos, ...clientLogos].map((logo, index) => (
                 <img
@@ -88,12 +88,12 @@ const Testimonials = () => {
           {/* Testimonial Card */}
           <div className="flex justify-center">
             <div
-              className={`relative bg-white p-8 sm:p-10 md:p-14 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl max-w-xl sm:max-w-2xl text-center border border-gray-100 transition-all duration-700
-              ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+              className={`relative bg-white p-8 sm:p-10 md:p-14 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl max-w-xl sm:max-w-2xl text-center border border-gray-100 transition-all duration-700 animation-scale
+              ${fade ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-95"}
               `}
             >
               {/* Decorative Quote */}
-              <div className="absolute -top-4 sm:-top-6 left-1/2 -translate-x-1/2 text-5xl sm:text-6xl text-red-100 select-none">
+              <div className="absolute -top-4 sm:-top-6 left-1/2 -translate-x-1/2 text-5xl sm:text-6xl text-red-100 select-none animate-fade">
                 “
               </div>
 
@@ -114,7 +114,7 @@ const Testimonials = () => {
                   <img
                     src={testimonials[current].avatar}
                     alt="Client Avatar"
-                    className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-4 border-white shadow-lg"
+                    className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-4 border-white shadow-lg animate-scale"
                   />
                 </div>
 
