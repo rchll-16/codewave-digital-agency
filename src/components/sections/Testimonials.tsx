@@ -1,36 +1,37 @@
 import { useState, useEffect } from "react";
+import avatar from "../../assets/avatar.png";
+
+import logo1 from "../../assets/logos/logo1.png";
+import logo2 from "../../assets/logos/logo2.png";
+import logo3 from "../../assets/logos/logo3.png";
+import logo4 from "../../assets/logos/logo4.png";
 
 const Testimonials = () => {
   const testimonials = [
     {
       tagline: "Creatives Mind and Works!",
       desc: " Nullam viverra leo quis libero vulputate ultricies sit amet et lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. ",
-      avatar: "src/assets/avatar.png",
+      avatar: avatar,
       name: "John Doe",
       position: "CEO, Centrix",
     },
     {
       tagline: "Amazing Experience!",
       desc: " Nullam viverra leo quis libero vulputate ultricies sit amet et lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      avatar: "src/assets/avatar.png",
+      avatar: avatar,
       name: "William James",
       position: "CTO, CodeWave",
     },
     {
       tagline: "Great Work!",
       desc: " Nullam viverra leo quis libero vulputate ultricies sit amet et lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      avatar: "src/assets/avatar.png",
+      avatar: avatar,
       name: "Benjamin Franklin",
       position: "COO, Codex",
     },
   ];
 
-  const clientLogos = [
-    "src/assets//logos/logo1.png",
-    "src/assets//logos/logo2.png",
-    "src/assets//logos/logo3.png",
-    "src/assets//logos/logo4.png",
-  ];
+  const clientLogos = [logo1, logo2, logo3, logo4];
 
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
